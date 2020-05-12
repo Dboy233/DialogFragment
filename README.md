@@ -100,7 +100,7 @@ public class JavaDialogFragmentDemo extends BaseDialogFragment {
 
 ## --------Java ViewBinding--------
 
-#### [BaseDialogFragment](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/java/viewBinding/BaseDialogFragment.java)
+#### [BaseDialogFragment<T extends ViewBinding>](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/java/viewBinding/BaseDialogFragment.java)
 
 ##### Demo
 
