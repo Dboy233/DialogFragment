@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:text="显示 Kotlin BaseDialogFragmentDemo"
+        android:textAllCaps="false"
+        android:onClick="showKotlinDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="显示 Kotlin ViewBinding BaseDialogFragmentDemo"
+        android:textAllCaps="false"
+        android:onClick="showViewBindingKotlinDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="显示 Java BaseDialogFragmentDemo"
+        android:textAllCaps="false"
+        android:onClick="showJavaDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="显示 Java ViewBinding BaseDialogFragmentDemo"
+        android:textAllCaps="false"
+        android:onClick="showViewBindingJavaDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
