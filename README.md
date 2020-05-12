@@ -6,7 +6,7 @@
 
 ## --------kotlin--------
 
-#### [BaseDialogFragment](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/kotlin/BaseDialogFragment.kt)
+#### [`BaseDialogFragment`](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/kotlin/BaseDialogFragment.kt)
 
 ##### Demo
 
@@ -31,7 +31,7 @@ class KotlinDialogFragmentDemo : BaseDialogFragment() {
 
 ## --------kotlin  ViewBinding--------
 
-#### [BaseDialogFragment< T : ViewBinding>](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/kotlin/viewBinding/BaseDialogFragment.kt)
+#### [`BaseDialogFragment< T : ViewBinding>`](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/kotlin/viewBinding/BaseDialogFragment.kt)
 
 ##### Demo
 
@@ -64,7 +64,7 @@ class KotlinViewBindingDialogDemo : BaseDialogFragment<KotlinDialogDemoLayoutBin
 
 ## --------Java--------
 
-#### [BaseDialogFragment](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/java/BaseDialogFragment.java)
+#### [`BaseDialogFragment`](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/java/BaseDialogFragment.java)
 
 ##### Demo
 
@@ -100,7 +100,7 @@ public class JavaDialogFragmentDemo extends BaseDialogFragment {
 
 ## --------Java ViewBinding--------
 
-#### [BaseDialogFragment<T extends ViewBinding>](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/java/viewBinding/BaseDialogFragment.java)
+#### [`BaseDialogFragment<T extends ViewBinding>`](https://github.com/Dboy233/DialogFragment/blob/master/app/src/main/java/com/dboy/dialog/java/viewBinding/BaseDialogFragment.java)
 
 ##### Demo
 
