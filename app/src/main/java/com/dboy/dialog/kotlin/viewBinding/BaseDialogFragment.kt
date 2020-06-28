@@ -1,5 +1,6 @@
 package com.dboy.dialog.kotlin.viewBinding
 
+import android.app.Dialog
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.DisplayMetrics
@@ -9,10 +10,16 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.annotation.FloatRange
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.viewbinding.ViewBinding
-
-abstract class BaseDialogFragment< T : ViewBinding> : DialogFragment(), IDialog<T> {
+import com.dboy.dialog.MyDialog
+/**
+ * @author  Dboy
+ *  viewBinding封装的baseDialog
+ */
+open abstract class BaseDialogFragment<T : ViewBinding> : DialogFragment(), IDialog<T> {
 
     lateinit var mRootView: T
 
@@ -31,8 +38,22 @@ abstract class BaseDialogFragment< T : ViewBinding> : DialogFragment(), IDialog<
         initViewAndData(savedInstanceState)
     }
 
+    open fun show(activity: FragmentActivity) {
+        show(activity.supportFragmentManager)
+    }
+
+    open fun show(fragment: Fragment) {
+        show(fragment.childFragmentManager)
+    }
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        return MyDialog(requireContext(),theme)
+    }
     override fun show(manager: FragmentManager) {
-        super.show(manager, javaClass::getSimpleName.toString())
+        try {
+            manager.beginTransaction().remove(this).commitAllowingStateLoss()
+            super.show(manager, javaClass::getSimpleName.toString())
+        } catch (e: Exception) {
+        }
     }
 
     protected fun setDialogWidthSize(widthPercent: Float, heightPercent: Float) {
@@ -55,7 +76,7 @@ abstract class BaseDialogFragment< T : ViewBinding> : DialogFragment(), IDialog<
 
 }
 
-interface IDialog<T :ViewBinding> {
+interface IDialog<T : ViewBinding> {
 
     /**
      * 获取binding

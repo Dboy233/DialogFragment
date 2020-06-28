@@ -17,21 +17,23 @@ class MainActivity : AppCompatActivity() {
 
     fun showKotlinDemo(view: View) {
         val dialog = KotlinDialogFragmentDemo()
-        dialog.show(supportFragmentManager)
+        dialog.show(this)
     }
 
     fun showViewBindingKotlinDemo(view: View) {
         val dialog = KotlinViewBindingDialogDemo()
-        dialog.show(supportFragmentManager)
+        dialog.show(this)
     }
 
     fun showJavaDemo(view: View) {
         val dialog = JavaDialogFragmentDemo()
-        dialog.show(supportFragmentManager)
+        for (i in 0..1) {
+            dialog.show(this)
+        }
     }
 
     fun showViewBindingJavaDemo(view: View) {
         val dialog = JavaViewBindingDialogDemo()
-        dialog.show(supportFragmentManager)
+        dialog.show(this)
     }
 }

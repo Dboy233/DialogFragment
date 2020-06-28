@@ -14,9 +14,15 @@ import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.dboy.dialog.MyDialog;
+/**
+ * @author  Dboy
+ *   封装的basedialog
+ */
 public abstract class BaseDialogFragment extends DialogFragment implements IDialog {
 
     protected View mRootView;
@@ -40,9 +46,29 @@ public abstract class BaseDialogFragment extends DialogFragment implements IDial
         return mRootView.findViewById(viewId);
     }
 
+
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        return new MyDialog(requireContext(), getTheme());
+    }
+
+    public void show(FragmentActivity fragmentActivity) {
+        show(fragmentActivity.getSupportFragmentManager());
+    }
+
+    public void show(Fragment fragment) {
+        show(fragment.getChildFragmentManager());
+    }
+
     @Override
     public void show(FragmentManager manager) {
-        super.show(manager, getClass().getSimpleName());
+        try {
+            manager.beginTransaction().remove(this).commitAllowingStateLoss();
+            super.show(manager, getClass().getSimpleName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void setDialogWidthSize(float widthPercent, float heightPercent) {

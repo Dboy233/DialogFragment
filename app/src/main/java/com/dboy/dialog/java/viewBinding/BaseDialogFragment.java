@@ -13,11 +13,17 @@ import android.view.WindowManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewbinding.ViewBinding;
 
+import com.dboy.dialog.MyDialog;
 
+/**
+ * @author  Dboy
+ *  viewBinding封装的baseDialog
+ */
 public abstract class BaseDialogFragment<T extends ViewBinding> extends DialogFragment implements IDialog<T> {
 
     protected T mRootView;
@@ -56,7 +62,26 @@ public abstract class BaseDialogFragment<T extends ViewBinding> extends DialogFr
         }
     }
 
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        return new MyDialog(requireContext(), getTheme());
+    }
+
+    public void show(FragmentActivity fragmentActivity) {
+        show(fragmentActivity.getSupportFragmentManager());
+    }
+
+    public void show(Fragment fragment) {
+        show(fragment.getChildFragmentManager());
+    }
+    @Override
     public void show(@NonNull FragmentManager manager) {
-        super.show(manager, getClass().getSimpleName());
+        try {
+            manager.beginTransaction().remove(this).commitAllowingStateLoss();
+            super.show(manager, getClass().getSimpleName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
