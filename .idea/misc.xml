@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ASMIdeaPluginConfiguration">
+    <asm skipDebug="true" skipFrames="true" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Work/Project/AndroidUltra/DialogFragment/app/src/main/res/drawable/comm_dialog_bg.xml" value="0.2564814814814815" />
+        <entry key="..\:/Work/Project/AndroidUltra/DialogFragment/app/src/main/res/drawable/shape_black85_bg_all_corner_new.xml" value="0.2641025641025641" />
+        <entry key="..\:/Work/Project/AndroidUltra/DialogFragment/app/src/main/res/drawable/shape_btn_bg.xml" value="0.2641025641025641" />
+        <entry key="..\:/Work/Project/AndroidUltra/DialogFragment/app/src/main/res/layout/activity_demo.xml" value="0.4" />
+        <entry key="..\:/Work/Project/AndroidUltra/DialogFragment/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Work/Project/AndroidUltra/DialogFragment/app/src/main/res/layout/dialog_may_leak_loading_layout.xml" value="0.2520833333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

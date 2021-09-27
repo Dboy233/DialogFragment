@@ -1,39 +1,21 @@
 package com.dboy.dialog
 
-import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.dboy.dialog.demo.JavaDialogFragmentDemo
-import com.dboy.dialog.demo.JavaViewBindingDialogDemo
-import com.dboy.dialog.demo.KotlinDialogFragmentDemo
-import com.dboy.dialog.demo.KotlinViewBindingDialogDemo
+import com.dboy.dialog.widget.FixLoadingDialogFragment
+import com.dboy.dialog.widget.LoadingDialogFragment
+/**
+ * - 文件描述：Demo
+ * @author Dboy
+ * @since 2021/9/27
+ */
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    fun showLoading(view: android.view.View) {
+        LoadingDialogFragment().show(supportFragmentManager, "LoadingDialogFragment")
     }
 
-    fun showKotlinDemo(view: View) {
-        val dialog = KotlinDialogFragmentDemo()
-        dialog.show(this)
+    fun showFixLoading(view: android.view.View) {
+        FixLoadingDialogFragment().show(supportFragmentManager,"FixLoadingDialogFragment")
     }
 
-    fun showViewBindingKotlinDemo(view: View) {
-        val dialog = KotlinViewBindingDialogDemo()
-        dialog.show(this)
-    }
-
-    fun showJavaDemo(view: View) {
-        val dialog = JavaDialogFragmentDemo()
-        for (i in 0..1) {
-            dialog.show(this)
-        }
-    }
-
-    fun showViewBindingJavaDemo(view: View) {
-        val dialog = JavaViewBindingDialogDemo()
-        dialog.show(this)
-    }
 }
